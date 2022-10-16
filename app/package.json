@@ -23,6 +23,9 @@
     "angular-material": "^1.2.5",
     "angularjs-rzslider": "^0.1.4",
     "angularjs-slider": "^7.1.0",
+    "bootstrap": "^4.4.1",
+    "primeicons": "^6.0.1",
+    "primeng": "^14.1.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

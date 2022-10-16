@@ -1,24 +1,106 @@
-<html lang = "en">
-  
-  <head>
-    <link rel = "stylesheet"
-       href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
-    <script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-    
-    <script type = "text/javascript">    
-       angular.module('firstApplication', ['ngMaterial']);
-    </script>
- </head>
+<body>
+<form [formGroup]="qriskForm">
+<div class="container">
+   <div class="row">
+      <div class="col-sm-6">
+         
+         
+         
+
+         <p-fieldset legend="About You">
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="form-label">Name</label>
+                  <input id="name" name="name" type="text" pInputText [(ngModel)]="clinicalInformation.name" placeholder="Name" formControlName="name" />
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="form-label">Age: {{clinicalInformation.age}}</label>
+                  <p-slider [(ngModel)]="clinicalInformation.age" [min]="1" [max]="100" [step]="1" formControlName="age"  ></p-slider>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="form-label">Ethnicity:</label>
+                  <p-dropdown [options]="ethnicities" [(ngModel)]="clinicalInformation.ethnicity" [filter]="true" formControlName="ethnicity"></p-dropdown>
+
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-6">
+                  <label class="form-label">Height (cm)</label>
+                  <input  type="text" style="width: 5vw;" pInputText [(ngModel)]="height"  formControlName="height" />
+               </div>
+                <div class="col-6">
+                  <label class="form-label">Weight (kg)</label>
+                  <input type="text" style="width: 5vw;" pInputText [(ngModel)]="weight" formControlName="weight" />
+               </div>
+            </div>
+         </p-fieldset>
+
+         <p-fieldset legend="Clinical Information" styleClass="margin">
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Atrial fibrillation:</label>
+                  <p-radioButton  formControlName="atrialFibrillation" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.atrialFibrillation"></p-radioButton>
+                  <p-radioButton  formControlName="atrialFibrillation" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.atrialFibrillation"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Atypical Antipsychotics:</label>
+                  <p-radioButton  formControlName="atypicalAntipsychotics" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.atypicalAntipsychotics"></p-radioButton>
+                  <p-radioButton  formControlName="atypicalAntipsychotics" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.atypicalAntipsychotics"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Cortico Steroids:</label>
+                  <p-radioButton  formControlName="corticoSteroids" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.corticoSteroids"></p-radioButton>
+                  <p-radioButton  formControlName="corticoSteroids" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.corticoSteroids"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Rheumatoid arthritis :</label>
+                  <p-radioButton  formControlName="rheumatoidArthritis" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.rheumatoidArthritis"></p-radioButton>
+                  <p-radioButton  formControlName="rheumatoidArthritis" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.rheumatoidArthritis"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Chronic kidney disease :</label>
+                  <p-radioButton  formControlName="chronicKidneyDisease" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.chronicKidneyDisease"></p-radioButton>
+                  <p-radioButton  formControlName="chronicKidneyDisease" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.chronicKidneyDisease"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Severe mental illness :</label>
+                  <p-radioButton  formControlName="severeMentalIllness" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.severeMentalIllness"></p-radioButton>
+                  <p-radioButton  formControlName="severeMentalIllness" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.severeMentalIllness"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Systemic lupus erythematosus :</label>
+                  <p-radioButton  formControlName="systemicLupusErythematosus" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.systemicLupusErythematosus"></p-radioButton>
+                  <p-radioButton  formControlName="systemicLupusErythematosus" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.systemicLupusErythematosus"></p-radioButton>
+               </div>
+            </div>
+         </p-fieldset>
+      </div>
+   
+      <div class="col-sm-6">
+         
+      </div>
+   </div>
+
+</div>
+</form>
+</body> 
 
 
- <body ng-app = "firstApplication" ng-cloak>
-  <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
 
-</body>
-
-</html>
 <router-outlet></router-outlet>
