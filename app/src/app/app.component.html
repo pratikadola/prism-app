@@ -17,13 +17,13 @@
             <div class="row">
                <div class="col-sm-12">
                   <label class="form-label">Age: {{clinicalInformation.age}}</label>
-                  <p-slider [(ngModel)]="clinicalInformation.age" [min]="1" [max]="100" [step]="1" formControlName="age"  ></p-slider>
+                  <p-slider [(ngModel)]="clinicalInformation.age" [min]="25" [max]="84" [step]="1" formControlName="age"  ></p-slider>
                </div>
             </div>
             <div class="row">
                <div class="col-sm-12">
                   <label class="form-label">Ethnicity:</label>
-                  <p-dropdown [options]="ethnicities" [(ngModel)]="clinicalInformation.ethnicity" [filter]="true" formControlName="ethnicity"></p-dropdown>
+                  <p-dropdown [options]="ethnicities" [(ngModel)]="clinicalInformation.ethnicityRisk" [filter]="true" formControlName="ethnicityRisk"></p-dropdown>
 
                </div>
             </div>
@@ -87,6 +87,70 @@
                   <label class="ci-label">Systemic lupus erythematosus :</label>
                   <p-radioButton  formControlName="systemicLupusErythematosus" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.systemicLupusErythematosus"></p-radioButton>
                   <p-radioButton  formControlName="systemicLupusErythematosus" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.systemicLupusErythematosus"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">On blood pressure treatment:</label>
+                  <p-radioButton  formControlName="Treatedhyp" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.Treatedhyp"></p-radioButton>
+                  <p-radioButton  formControlName="Treatedhyp" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.Treatedhyp"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Diabetes type 1 status:</label>
+                  <p-radioButton  formControlName="type1Diabetes" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.type1Diabetes"></p-radioButton>
+                  <p-radioButton  formControlName="type1Diabetes" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.type1Diabetes"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Diabetes type 2 status:</label>
+                  <p-radioButton  formControlName="type2Diabetes" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.type2Diabetes"></p-radioButton>
+                  <p-radioButton  formControlName="type2Diabetes" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.type2Diabetes"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Angina or heart attack in a 1st degree relative < 60 :</label>
+                  <p-radioButton  formControlName="heartAttackInFirstDegreeRelative" styleClass="radio-button"  value="Yes" label="Yes" [(ngModel)]="clinicalInformation.heartAttackInFirstDegreeRelative"></p-radioButton>
+                  <p-radioButton  formControlName="heartAttackInFirstDegreeRelative" styleClass="radio-button"  value="No" label="No" [(ngModel)]="clinicalInformation.heartAttackInFirstDegreeRelative"></p-radioButton>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Cholesterol/HDL ratio</label>
+                  <input id="name" name="name" type="text" pInputText [(ngModel)]="clinicalInformation.cholesterolRatio" placeholder="Name" formControlName="cholesterolRatio" />
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Systolic blood pressure (mmHg)</label>
+                  <input id="name" name="name" type="text" pInputText [(ngModel)]="clinicalInformation.systolicBloodPressure" placeholder="Name" formControlName="systolicBloodPressure" />
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Standard deviation of at least two most recent systolic blood pressure readings (mmHg)</label>
+                  <input id="name" name="name" type="text" pInputText [(ngModel)]="clinicalInformation.stdSystolicBloodPressure" placeholder="Name" formControlName="stdSystolicBloodPressure" />
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="form-label">Ethnicity:</label>
+                  <p-dropdown [options]="smokingStatusus" [(ngModel)]="clinicalInformation.smokeStatus" [filter]="true" formControlName="smokeStatus"></p-dropdown>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="form-label">number of years for which the non-survival risk is calculated: {{clinicalInformation.yearsNonSurvivalRiskCalculated}}</label>
+                  <p-slider [(ngModel)]="clinicalInformation.yearsNonSurvivalRiskCalculated" [min]="1" [max]="100" [step]="1" formControlName="yearsNonSurvivalRiskCalculated"  ></p-slider>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <label class="ci-label">Townsend score:   </label>
+                  <input id="name" name="name" type="text" pInputText [(ngModel)]="clinicalInformation.townSendScore" placeholder="Name" formControlName="townSendScore" />
                </div>
             </div>
          </p-fieldset>

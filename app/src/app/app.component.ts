@@ -30,6 +30,13 @@ export class AppComponent implements OnInit{
     {label: "Chinese", value: 8},
     {label: "Other Ethnic Group", value: 9},
 ]
+smokingStatusus = [
+  {label: "non-smoker", value: 0},
+  {label: "ex-smoker", value: 1},
+  {label: "light smoker", value: 2},
+  {label: "moderate smoker", value: 3},
+  {label: "heavy smoker", value: 4},
+]
   ngOnInit() {
     this.clinicalInformation = new ClinicalInformation();
     this.clinicalInformation.age=1;
@@ -44,7 +51,18 @@ export class AppComponent implements OnInit{
       rheumatoidArthritis: new FormControl({rheumatoidArthritis: this.clinicalInformation.rheumatoidArthritis}),
       chronicKidneyDisease: new FormControl({chronicKidneyDisease: this.clinicalInformation.chronicKidneyDisease}),
       severeMentalIllness: new FormControl({severeMentalIllness: this.clinicalInformation.severeMentalIllness}),
-      systemicLupusErythematosus: new FormControl({systemicLupusErythematosus: this.clinicalInformation.systemicLupusErythematosus})
+      systemicLupusErythematosus: new FormControl({systemicLupusErythematosus: this.clinicalInformation.systemicLupusErythematosus}),
+      Treatedhyp: new FormControl({Treatedhyp: this.clinicalInformation.Treatedhyp}),
+      type1Diabetes: new FormControl({type1Diabetes: this.clinicalInformation.type1Diabetes}),
+      type2Diabetes: new FormControl({type2Diabetes: this.clinicalInformation.type2Diabetes}),
+      ethnicityRisk: new FormControl({ethnicityRisk: this.clinicalInformation.ethnicityRisk}),
+      heartAttackInFirstDegreeRelative: new FormControl({heartAttackInFirstDegreeRelative: this.clinicalInformation.heartAttackInFirstDegreeRelative}),
+      cholesterolRatio: new FormControl({cholesterolRatio: this.clinicalInformation.cholesterolRatio}),
+      systolicBloodPressure: new FormControl({systolicBloodPressure: this.clinicalInformation.systolicBloodPressure}),
+      stdSystolicBloodPressure: new FormControl({stdSystolicBloodPressure: this.clinicalInformation.stdSystolicBloodPressure}),
+      smokeStatus: new FormControl({smokeStatus: this.clinicalInformation.smokeStatus}),
+      yearsNonSurvivalRiskCalculated: new FormControl({yearsNonSurvivalRiskCalculated: this.clinicalInformation.yearsNonSurvivalRiskCalculated}),
+      townSendScore: new FormControl({townSendScore: this.clinicalInformation.townSendScore})
     })
   }
   title = 'app';
